@@ -4,27 +4,44 @@
 		<title>Easy Maps test page</title>
 		<meta charset="UTF-8">
 		<style>
-			#map, body, html
+			body, html
 			{
 				width: 100%;
 				height: 100%;
 				margin: 0;
 				padding: 0;
 			}
+			.map		 { width: 45%; height: 100%; float: left; }
+			.map:first-child { margin-right: 10%;	      		  }
+			#map		 { width: 100%; height: 100%; 		  }
 		</style>
 	</head>
 	<body>
-		<div id="map">	</div>
+		<div class="map" id="iets"></div>
+		<div class="map" id="nog"></div>
 
 		<script src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
 		<script src="easy_maps.js"></script>
 		<script>
 			// Create a new google map
-			var map = new Map(document.getElementById('map'), {
+			var map = new Map(document.getElementById('iets'), {
 				zoom : 9,
 				center : Position(52,5),
 				mapTypeId : google.maps.MapTypeId.TERRAIN
 			});
+			console.log(map);
+
+			var maps = new Map(document.getElementById('nog'), {
+				zoom : 12,
+				center : Position(51,4)
+			});
+
+			// Create a new marker
+			var marker = new Marker({
+				position : Position(52,5)
+			});
+			console.log(marker);
+			map.addMarker(marker);
 		</script>
 	</body>
 </html>
