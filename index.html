@@ -4,6 +4,7 @@
 		<title>Easy Maps test page</title>
 		<meta charset="UTF-8">
 		<style>
+			/* Style the pages and the maps */
 			body, html
 			{
 				width: 100%;
@@ -17,31 +18,40 @@
 		</style>
 	</head>
 	<body>
-		<div class="map" id="iets"></div>
-		<div class="map" id="nog"></div>
+		<!-- Make 2 divs for the map -->
+		<div class="map" id="m1"></div>
+		<div class="map" id="m2"></div>
 
+		<!-- Load the API and the libary(v1.1) -->
 		<script src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
-		<script src="easy_maps.js"></script>
+		<script src="easy_maps.1-1.min.js"></script>
 		<script>
 			// Create a new google map
-			var map = new Map(document.getElementById('iets'), {
+			var map = new Map(document.getElementById('m1'), {
 				zoom : 9,
 				center : Position(52,5),
 				mapTypeId : google.maps.MapTypeId.TERRAIN
 			});
-			console.log(map);
 
-			var maps = new Map(document.getElementById('nog'), {
+			// And another one
+			var maps = new Map(document.getElementById('m2'), {
 				zoom : 12,
 				center : Position(51,4)
 			});
 
-			// Create a new marker
+			// Create 2 new markers
 			var marker = new Marker({
 				position : Position(52,5)
 			});
-			console.log(marker);
-			map.addMarker(marker);
+			var marker1 = new Marker({
+				position : Position(50,4)
+			});
+
+			// Add them to the primary map
+			map.addMarkers(marker, marker1);
+
+			// Fit the markers in the primary map
+			map.fitMarkers(marker, marker1);
 		</script>
 	</body>
 </html>
