@@ -5,6 +5,7 @@
  *
  * @name 	: Easy Maps
  * @for		: Google Maps API V3
+<<<<<<< HEAD
  * @version	: 0.3b1
  * @author	: Wouter J
  * @use		: JavaScript
@@ -16,10 +17,16 @@
  * guarantee that this code work.
  * If you want to use the latest version
  * take a look at easy-maps.latest.min.js
+=======
+ * @version	: 1.0
+ * @author	: Wouter J
+ * @use		: JavaScript
+>>>>>>> b09ec24cc45c7c744592e0bdd165dc26d94c44a2
  */
 // Let's create a workaround
 (function(window,document,undefined) {
 
+<<<<<<< HEAD
 	/*
 	 * @name	: extend
 	 * @type	: Function
@@ -40,20 +47,32 @@
 
 		return aOne;
 	};
+=======
+	var maps;
+>>>>>>> b09ec24cc45c7c744592e0bdd165dc26d94c44a2
 
 	/*
 	 * @name	: Position
 	 * @type	: Object
+<<<<<<< HEAD
 	 * @visibility	: public
+=======
+>>>>>>> b09ec24cc45c7c744592e0bdd165dc26d94c44a2
 	 * @use		: For creating a coördinate
 	 * @parameters	: OBJECT ll  ||  STRING place
 	 */
 	var position = function() {
 		var args = arguments,
 		    len = args.length;
+<<<<<<< HEAD
 
 		if( len < 1 ) 
 			return false;
+=======
+		if( len < 1 ) {
+			return false;
+		}
+>>>>>>> b09ec24cc45c7c744592e0bdd165dc26d94c44a2
 		
 		if( len == 1 && typeof args[0] == 'string' ) {
 			return new google.maps.LatLng(args[0]);
@@ -68,15 +87,24 @@
 	/*
 	 * @name	: Map
 	 * @type	: Object
+<<<<<<< HEAD
 	 * @visibility	: public
+=======
+>>>>>>> b09ec24cc45c7c744592e0bdd165dc26d94c44a2
 	 * @use		: For creating a new google map
 	 * @parameters	: DOM elem
 	 * 		  OBJECT options
 	 * @TODO	: Elem dom check
 	 */
 	var map = function( elem, options ) {
+<<<<<<< HEAD
 		if( arguments.length < 1 ) 
 			return false;
+=======
+		if( arguments.length < 1 ) {
+			return false;
+		}
+>>>>>>> b09ec24cc45c7c744592e0bdd165dc26d94c44a2
 
 		var defaults = {
 			zoom : 1,
@@ -84,12 +112,21 @@
 			mapTypeId : google.maps.MapTypeId.ROADMAP
 		};
 		if( options !== undefined ) {
+<<<<<<< HEAD
 			options = extend( options, defaults );
+=======
+			for( i in defaults ) {
+				if( !options[i] ) {
+					options[i] = defaults[i];
+				}
+			}
+>>>>>>> b09ec24cc45c7c744592e0bdd165dc26d94c44a2
 		}
 		else {
 			options = defaults;
 		}
 
+<<<<<<< HEAD
 		this.maps = new google.maps.Map(elem, options);
 
 		/*
@@ -195,5 +232,13 @@
 	window.Position = position;
 	     window.Map = map;
 	  window.Marker	= marker;
+=======
+		maps = new google.maps.Map(elem, options);
+	};
+
+	// Every object should work in the normal workaround
+	     window.Map = map;
+	window.Position = position;
+>>>>>>> b09ec24cc45c7c744592e0bdd165dc26d94c44a2
 
 })(window, document);

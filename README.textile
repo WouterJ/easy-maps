@@ -1,5 +1,0 @@
-h1. Easy Maps
-
-Easy Maps is an opensource JavaScript libary for Google Maps API V3. It makes the code more readable and easier to understand.
-It validate the user input and add some nice features to it.
-
