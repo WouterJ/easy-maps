@@ -6,6 +6,7 @@ EasyMaps is based on Objects. Every thing is an object and with methodes you can
 
 ## Features
 EASYMAPS IS BETA AT THE MOMENT, NOT ALL THE FEATURES ARE IMPLENTED.
+
 - Map, Marker, Polygon and Polyline objects
 - Drag 'n zoom plugin
 - Click interaction
