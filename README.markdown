@@ -14,6 +14,7 @@ EASYMAPS IS BETA AT THE MOMENT, NOT ALL THE FEATURES ARE IMPLENTED.
 ## License
 EasyMaps is licensed for Creative Commons Attribution-ShareAlike. More information about this license can you find "here (creative commons)":http://creativecommons.org/licenses/by-sa/3.0/
 You're free to use this in your (commercial) projects. And you can use pieces of code for you're code. But if you make a new project based on this you must added this comment at the top:
+
 	/\*
 	 \* @name	: \{Your Project Name\} - EasyMaps
 	 \* @author	: \{Your name\}
